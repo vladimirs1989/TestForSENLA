@@ -4,9 +4,7 @@ import com.example.demo.repository.entity.Product;
 import com.example.demo.service.impl.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +23,10 @@ public class ProductController {
     @ResponseBody
     public List<Product> listCryptoCurrency() {
         return productService.getAllProduct();
+    }
+
+    @PostMapping
+    public String Create(String str) {
+        return str;
     }
 }
